@@ -1,11 +1,8 @@
-export default function Input() {
-    function cambio(){
-        console.log("cambiaste el input")
-    }
+export default function Input(props) {
 
     return (
         <>
-            <input type="text" onChange={cambio}></input>
+            <input type="text" onChange={props.cambio}></input>
         </>
     )
 }

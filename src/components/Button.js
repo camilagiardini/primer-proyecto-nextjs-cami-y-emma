@@ -1,13 +1,13 @@
 "use client"
 
 export default function Button(props){
-    function imprimir(){
-        console.log("hola")
+    function funcionalidad(){
+        console.log(props.texto)
     }
 
     return (
         <>
-            <button onClick={imprimir}>hola</button>
+            <button onClick={funcionalidad}>hola</button>
         </>
     )
 }

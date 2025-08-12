@@ -7,6 +7,10 @@ import Form from "@/components/Form"
 
 
 export default function LoginPage() {
+    function imprimirHola(){
+        console.log("holaaaaaa")
+    }
+
     function cambio1() {
         console.log("CAMBIO1")
     }
@@ -21,11 +25,11 @@ export default function LoginPage() {
         <>
             <h1>pagina login</h1>
             <Title></Title>
-            <Input></Input>
-            <Button></Button>
+            <Input cambio={imprimirHola}></Input>
+            <Button texto="tocaste el primer boton"></Button>
 
             <p>separador</p>
-            <Form></Form>
+            <Form texto="tocaste el segundo boton" cambio1={cambio1} cambio2={cambio2} cambio3={cambio3}></Form>
         </>
     )
 }

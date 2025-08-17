@@ -1,7 +1,7 @@
-export default function Title(){
+export default function Title(props){
     return(
         <>
-            <h1>Titulo del componente</h1>
+            <h1>{props.title}</h1>
         </>
     )
 }

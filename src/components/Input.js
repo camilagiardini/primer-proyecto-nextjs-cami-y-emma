@@ -2,7 +2,7 @@ export default function Input(props) {
 
     return (
         <>
-            <input type="text" onChange={props.cambio}></input>
+            <input type={props.type} onChange={props.onChange} checked={props.checked} ></input>
         </>
     )
 }

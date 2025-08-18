@@ -1,28 +1,47 @@
 "use client"
 
 import Button from "@/components/Button";
-import Title from "@/components/Title";
-import { useState } from "react";
+import Input from "@/components/Input";
+import Title from "@/components/Title"
+import { useEffect, useState } from "react";
 
 export default function ContadorPage() {
+
     const [cuenta, setCuenta] = useState(0);
+    const [checked, setChecked] = useState(true);
 
     function incrementar(){
-        setCuenta(cuenta+1) // usa setCuenta para modificar el valor de cuenta (en este caso le suma 1)
+        setCuenta(cuenta+1)
     }
 
     function decrementar(){
         setCuenta(cuenta-1)
     }
 
-    function ver(){
-        console.log(cuenta)
+    function checkbox(event){
+        setChecked(event.target.checked)
     }
 
-    return(
+    function cambiarValor(){
+        if (checked==true) {
+            incrementar()
+        } else {
+            decrementar()
+        }
+    }
+
+    useEffect(() => {
+        if (cuenta==20 || cuenta==-20){
+            setCuenta(0)
+        }
+        console.log("cuenta varió: ", cuenta)
+    }, [cuenta])
+
+    return (
         <>
-            <Title text="Página del contador"></Title>
-            <Button onClick={incrementar}></Button>
+        <Title title="Página del contador"></Title>
+        <Button title="incrementar" onClick={cambiarValor}></Button>
+        <Input type="checkbox" onChange={checkbox} checked={checked}></Input>
         </>
     )
 }

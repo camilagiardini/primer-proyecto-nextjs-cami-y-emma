@@ -9,6 +9,7 @@ export default function ContadorPage() {
 
     const [cuenta, setCuenta] = useState(0);
     const [checked, setChecked] = useState(true);
+    const [color, setColor] = useState("rojo");
 
     function incrementar(){
         setCuenta(cuenta+1)
@@ -20,6 +21,11 @@ export default function ContadorPage() {
 
     function checkbox(event){
         setChecked(event.target.checked)
+        setColor(event.target.checked)
+
+        if (color){
+            color
+        }
     }
 
     function cambiarValor(){
@@ -40,8 +46,9 @@ export default function ContadorPage() {
     return (
         <>
         <Title title="Página del contador"></Title>
-        <Button title="incrementar" onClick={cambiarValor}></Button>
+        <Button title="incrementar" onClick={cambiarValor} color={color}></Button>
         <Input type="checkbox" onChange={checkbox} checked={checked}></Input>
+        <h2>Contador: {cuenta}</h2>
         </>
     )
 }

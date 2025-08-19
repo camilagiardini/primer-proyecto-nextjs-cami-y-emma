@@ -22,11 +22,8 @@ export default function ContadorPage() {
     function checkbox(event){
         setChecked(event.target.checked)
         setColor(event.target.checked)
-
-        if (color){
-            color
-        }
     }
+
 
     function cambiarValor(){
         if (checked==true) {
@@ -35,6 +32,14 @@ export default function ContadorPage() {
             decrementar()
         }
     }
+
+    useEffect(() => {
+        if (checked==true) {
+            setColor("rojo")
+        } else {
+            setColor("verde")
+        }
+    }, [color])
 
     useEffect(() => {
         if (cuenta==20 || cuenta==-20){
